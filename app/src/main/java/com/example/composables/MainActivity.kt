@@ -19,7 +19,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -29,20 +33,11 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            val painter = painterResource(id = R.drawable.aot)
-            val description = "Coming this fall"
-            val title = "Attack on Titan"
-
-            // Example of using ImageCard composable
             Box(modifier = Modifier
-                .width(300.dp)
-                .padding(15.dp)
+                .fillMaxSize()
+                .background(Color(0xFF0101010))
             ) {
-                ImageCard(
-                    painter = painter,
-                    contentDescription = description,
-                    title = title,
-                )
+                StyledText()
             }
         }
     }
